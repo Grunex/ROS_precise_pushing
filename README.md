@@ -51,3 +51,6 @@ For example, to test the behavior only for cuboids with square base over 100 eva
 ```bash
 python3 PATH_TO_PUSHING_REPO/panda_push_rl_sb3/evaluate_policy.py --eObjType box --eObjSize1 -2 --eNumEvalEpisodes 100
 ```
+
+## Maintainer
+Gymnasium-Planar-Robotics is currently maintained by Lara Bergmann (@lbergmann1).
