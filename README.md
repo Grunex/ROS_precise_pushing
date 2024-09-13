@@ -53,4 +53,4 @@ python3 PATH_TO_PUSHING_REPO/panda_push_rl_sb3/evaluate_policy.py --eObjType box
 ```
 
 ## Maintainer
-Gymnasium-Planar-Robotics is currently maintained by Lara Bergmann (@lbergmann1).
+This repository is currently maintained by Lara Bergmann (@lbergmann1).
