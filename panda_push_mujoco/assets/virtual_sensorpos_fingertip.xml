@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="panda">
+	<compiler angle="radian" coordinate="local" texturedir="textures" />
+	<option timestep="0.001" cone="elliptic" jacobian="sparse" gravity="0 0 -9.81"/>
+    
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.8 0.898 1" rgb2="0.8 0.898 1" width="32" height="32" />
+
+        <material name="white"       rgba="1 1 1 1" />
+        <material name="black"       rgba="0.25 0.25 0.25 0.3" />
+        <material name="light_green" rgba="0 0.87843 0.22353 0.3" />
+        <material name="green"       rgba="0 0.6137255 0 0.3" />
+        <material name="light_blue"  rgba="0.01176 0.803922 1 0.3" />
+        <material name="blue"        rgba="0.01176 0.392157 1 0.3" />
+        <material name="grey"        rgba="0.5 0.5 0.5 1" />
+
+        <mesh name="tax_tip_0" file="meshes/visual/tax_tip_0.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_1" file="meshes/visual/tax_tip_1.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_2" file="meshes/visual/tax_tip_2.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_3" file="meshes/visual/tax_tip_3.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_4" file="meshes/visual/tax_tip_4.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_5" file="meshes/visual/tax_tip_5.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_6" file="meshes/visual/tax_tip_6.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_7" file="meshes/visual/tax_tip_7.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_8" file="meshes/visual/tax_tip_8.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_9" file="meshes/visual/tax_tip_9.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_10" file="meshes/visual/tax_tip_10.stl" scale="0.001 0.001 0.001" />
+        <mesh name="tax_tip_11" file="meshes/visual/tax_tip_11.stl" scale="0.001 0.001 0.001" />
+
+        <mesh name="ubi_tip_visual" file="meshes/collision/ubi_tip_collision.stl" scale="0.001 0.001 0.001" />
+    </asset>
+
+    <worldbody>
+        <body name="body" pos="0 0 0" quat="1 0 0 0">
+            
+            <geom name="tip_geom" type="mesh" mesh="ubi_tip_visual" pos="0 0 0" euler="0 0 0" material="white"/>
+            <site name="touch_site" type="ellipsoid" size="0.0107 0.008 0.0138"  pos="0 -0.00048 0.0185" euler="-0.17 0 0" rgba="1 0 0 0.5"/>
+
+            <geom name="tax_tip_0_geom"  type="mesh" mesh="tax_tip_0"  pos="0.000045178164 -0.0000615073064 0.0001464621212"   euler="0 0 0" material="green"/>
+            <geom name="tax_tip_1_geom"  type="mesh" mesh="tax_tip_1"  pos="0.00008619488 0.0000046286059 0.0001316570371"     euler="0 0 0" material="light_blue"/>
+            <geom name="tax_tip_2_geom"  type="mesh" mesh="tax_tip_2"  pos="0.0000830223182 0.0000074051459 0.0001945107626"   euler="0 0 0" material="blue"/>
+            <geom name="tax_tip_3_geom"  type="mesh" mesh="tax_tip_3"  pos="0.0000354169091 -0.0000500616896 0.000238568657"   euler="0 0 0" material="light_green"/>
+
+            <geom name="tax_tip_4_geom"  type="mesh" mesh="tax_tip_4"  pos="0.0000266992694 0.0000055709812 0.0003028623604"   euler="0 0 0" material="blue"/>
+            <geom name="tax_tip_5_geom"  type="mesh" mesh="tax_tip_5"  pos="0.0000713842137 0.0000097836545 0.0002588591432"   euler="0 0 0" material="light_blue"/>
+            <geom name="tax_tip_6_geom"  type="mesh" mesh="tax_tip_6"  pos="-0.0000713842136 0.0000097836546 0.0002588591435"  euler="0 0 0" material="blue"/>
+            <geom name="tax_tip_7_geom"  type="mesh" mesh="tax_tip_7"  pos="-0.0000266992693 0.0000055709811 0.00030286236"    euler="0 0 0" material="light_blue"/>
+
+            <geom name="tax_tip_8_geom"  type="mesh" mesh="tax_tip_8"  pos="-0.0000354169087 -0.0000500616897 0.0002385686587" euler="0 0 0" material="green"/>
+            <geom name="tax_tip_9_geom"  type="mesh" mesh="tax_tip_9"  pos="-0.0000830223175 0.0000074051458 0.0001945107617"  euler="0 0 0" material="light_blue"/>
+            <geom name="tax_tip_10_geom" type="mesh" mesh="tax_tip_10" pos="-0.0000861948819 0.0000046286058 0.0001316570354"  euler="0 0 0" material="blue"/>
+            <geom name="tax_tip_11_geom" type="mesh" mesh="tax_tip_11" pos="-0.000041517816 -0.000061507306 0.0001464621205"   euler="0 0 0" material="light_green"/>
+
+            <!-- virtual sensor positions -->
+            <!-- tip 0 -->
+            <!-- <site name="site_00_tip_0" type="sphere" size="0.0001"  pos=" 0.002545178164 -0.0063758073064 0.0170464621212" material="grey"/>
+            <site name="site_10_tip_0" type="sphere" size="0.0001"  pos=" 0.002545178164 -0.0067809073064 0.0129464621212" material="grey"/>
+ 
+            <site name="site_01_tip_0" type="sphere" size="0.0001"  pos=" 0.005945178164 -0.0049038073064 0.0170464621212" material="grey"/>
+            <site name="site_11_tip_0" type="sphere" size="0.0001"  pos=" 0.005945178164 -0.0053966073064 0.0129464621212" material="grey"/> -->
+ 
+            <!-- tip 1 --> 
+            <!-- <site name="site_00_tip_1" type="sphere" size="0.0001"  pos=" 0.008288978164 -0.0015868073064 0.0134464621212" material="grey"/>
+            <site name="site_01_tip_1" type="sphere" size="0.0001"  pos=" 0.008597178164  0.0024068073064 0.0134464621212" material="grey"/> -->
+ 
+            <!-- tip 2 --> 
+            <!-- <site name="site_00_tip_2" type="sphere" size="0.0001"  pos=" 0.007805178164 -0.0015868073064 0.0195464621212" material="grey"/>
+            <site name="site_01_tip_2" type="sphere" size="0.0001"  pos=" 0.008321178164  0.0024068073064 0.0196464621212" material="grey"/> -->
+ 
+            <!-- tip 3 --> 
+            <!-- <site name="site_00_tip_3" type="sphere" size="0.0001"  pos=" 0.001645178164 -0.0051098073064 0.0272464621212" material="grey"/>
+            <site name="site_10_tip_3" type="sphere" size="0.0001"  pos=" 0.002045178164 -0.0056625073064 0.0242464621212" material="grey"/>
+            <site name="site_20_tip_3" type="sphere" size="0.0001"  pos=" 0.002345178164 -0.0059790730640 0.0210464621212"  material="grey"/>
+ 
+            <site name="site_01_tip_3" type="sphere" size="0.0001"  pos=" 0.004345178164 -0.0039058073064 0.0272464621212" material="grey"/>
+            <site name="site_11_tip_3" type="sphere" size="0.0001"  pos=" 0.005245178164 -0.0045685073064 0.0242464621212" material="grey"/>
+            <site name="site_21_tip_3" type="sphere" size="0.0001"  pos=" 0.005745178164 -0.0046085073064 0.0210464621212" material="grey"/>
+  -->
+            <!-- tip 4 --> 
+            <!-- <site name="site_00_tip_4" type="sphere" size="0.0001"  pos=" 0.002785178164 -0.0015868073064 0.0303464621212" material="grey"/>
+            <site name="site_01_tip_4" type="sphere" size="0.0001"  pos=" 0.002745178164  0.0021068073064 0.0311050021212" material="grey"/> -->
+ 
+            <!-- tip 5 --> 
+            <!-- <site name="site_00_tip_5" type="sphere" size="0.0001"  pos=" 0.006445178164 -0.0015868073064 0.0274464621212" material="grey"/>
+            <site name="site_10_tip_5" type="sphere" size="0.0001"  pos=" 0.007395178164 -0.0015868073064 0.0249464621212" material="grey"/>
+            <site name="site_01_tip_5" type="sphere" size="0.0001"  pos=" 0.007115178164  0.0024068073064 0.0274464621212" material="grey"/>
+            <site name="site_11_tip_5" type="sphere" size="0.0001"  pos=" 0.008044178164  0.0024068073064 0.0249264621212" material="grey"/> -->
+ 
+            <!-- tip 6 --> 
+            <!-- <site name="site_00_tip_6" type="sphere" size="0.0001"  pos="-0.006415178164 -0.0015868073064 0.0274464621212" material="grey"/>
+            <site name="site_10_tip_6" type="sphere" size="0.0001"  pos="-0.007495178164 -0.0015868073064 0.0249464621212" material="grey"/>
+            <site name="site_01_tip_6" type="sphere" size="0.0001"  pos="-0.007115178164  0.0024068073064 0.0274464621212" material="grey"/>
+            <site name="site_11_tip_6" type="sphere" size="0.0001"  pos="-0.008064178164  0.0024068073064 0.0249264621212" material="grey"/> -->
+ 
+            <!-- tip 7 --> 
+            <!-- <site name="site_00_tip_7" type="sphere" size="0.0001"  pos="-0.002785178164 -0.0015868073064 0.0303464621212" material="grey"/>
+            <site name="site_01_tip_7" type="sphere" size="0.0001"  pos="-0.002745178164  0.0021068073064 0.0311050021212" material="grey"/> -->
+ 
+            <!-- tip 8 --> 
+            <!-- <site name="site_00_tip_8" type="sphere" size="0.0001"  pos="-0.001645178164 -0.0051098073064 0.0272464621212" material="grey"/>
+            <site name="site_10_tip_8" type="sphere" size="0.0001"  pos="-0.002045178164 -0.0056625073064 0.0242464621212" material="grey"/>
+            <site name="site_20_tip_8" type="sphere" size="0.0001"  pos="-0.002345178164 -0.0059790730640 0.0210464621212" material="grey"/>
+ 
+            <site name="site_01_tip_8" type="sphere" size="0.0001"  pos="-0.004345178164 -0.0039058073064 0.0272464621212" material="grey"/>
+            <site name="site_11_tip_8" type="sphere" size="0.0001"  pos="-0.005245178164 -0.0045685073064 0.0242464621212" material="grey"/>
+            <site name="site_21_tip_8" type="sphere" size="0.0001"  pos="-0.005745178164 -0.0046085073064 0.0210464621212" material="grey"/> -->
+ 
+            <!-- tip 9 --> 
+            <!-- <site name="site_00_tip_9" type="sphere" size="0.0001"  pos="-0.007905178164 -0.0015868073064 0.0195464621212" material="grey"/>
+            <site name="site_01_tip_9" type="sphere" size="0.0001"  pos="-0.008321178164  0.0024068073064 0.0196464621212" material="grey"/> -->
+
+            <!-- tip 10 -->
+            <!-- <site name="site_00_tip_10" type="sphere" size="0.0001" pos="-0.008308978164 -0.0015868073064 0.0134464621212" material="grey"/>
+            <site name="site_01_tip_10" type="sphere" size="0.0001" pos="-0.008597178164  0.0024068073064 0.0134464621212" material="grey"/> -->
+
+            <!-- tip 11 -->
+            <!-- <site name="site_00_tip_11" type="sphere" size="0.0001" pos="-0.002545178164 -0.0063758073064 0.0170464621212" material="grey"/>
+            <site name="site_10_tip_11" type="sphere" size="0.0001" pos="-0.002545178164 -0.0067809073064 0.0129464621212" material="grey"/>
+
+            <site name="site_01_tip_11" type="sphere" size="0.0001" pos="-0.005945178164 -0.0049298073064 0.0170464621212" material="grey"/>
+            <site name="site_11_tip_11" type="sphere" size="0.0001" pos="-0.005945178164 -0.0054366073064 0.0129464621212" material="grey"/> -->
+
+        </body>
+
+        <light directional="true" ambient="0.2 0.2 0.2" diffuse="0.8 0.8 0.8" specular="0.3 0.3 0.3" castshadow="false" pos="0 0 4" dir="0 0 -1" name="light0" />
+    </worldbody>
+
+</mujoco>

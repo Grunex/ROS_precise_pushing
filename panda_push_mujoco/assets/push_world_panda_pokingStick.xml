@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="panda">
+
+	<include file="panda_pokingStick.xml" />
+	<include file="push_world_base.xml" />
+	<include file="camera.xml" />
+    
+</mujoco>
