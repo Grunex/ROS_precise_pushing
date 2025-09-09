@@ -104,7 +104,9 @@ if config.thresholdLatentSpace != config.eThresholdLatentSpace:
 env = gym.envs.make(config.eEnvStr, **env_kwargs)
 
 # load best model
-model = SAC.load(path=os.path.join(eval_path,"best_model"), env=env)
+print("Evaluating model from:", os.path.join(eval_path, "best_model"))
+model = SAC.load(path="/home/glx/precise_pushing/panda_push_data/rl/MujocoPandaPushEnv/evaluation/best_model", env=env)
+#model = SAC.load(path=os.path.join(eval_path,"best_model"), env=env)
 venv = model.get_env()
 venv.seed(config.eEvalSeed)
 

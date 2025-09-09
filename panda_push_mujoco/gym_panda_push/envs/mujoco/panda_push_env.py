@@ -147,7 +147,10 @@ class MuJoCoPandaPushEnv(MuJoCoPandaPushBaseEnv):
                 logging.warning(f"Fixed object environment != fixed object height VAE")
             with torch.inference_mode():
                 self.vae = VAE(latent_dim=latent_dim)
-                self.vae.load_state_dict(torch.load(os.path.join(self.data_path, "net", f"vae_latentdim_{self.latent_dim}_imgHeight_{self.image_height}_imgWidth_{self.image_width}_fixedObjectHeight_{fixed_object_height_VAE}_simConfig_{int(self.use_sim_config)}")))
+                self.vae.load_state_dict(torch.load(
+    os.path.join(self.data_path, "net", f"vae_latentdim_{self.latent_dim}_imgHeight_{self.image_height}_imgWidth_{self.image_width}_fixedObjectHeight_{fixed_object_height_VAE}_simConfig_{int(self.use_sim_config)}"),
+    weights_only=True
+))
                 self.vae.to(self.device)
         if self.latent_dim is None and (self.encode_ee_pos or (not self.sparse_reward and not self.ground_truth_dense_reward)):
             raise ValueError("latent_dim is None, but encode_ee_pos==True or dense_latent_space reward is selected")

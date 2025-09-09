@@ -7,7 +7,7 @@ CWD = pathlib.Path(__file__).absolute().parent
 setup(
     name="precise_pushing",
     packages=[package for package in find_packages() if package.startswith("panda_push")],
-    install_requires = ["numpy>=1.20,<1.24.0",
+    install_requires = ["numpy>=1.20",
                         "matplotlib>=3.3,!=3.6.1",
                         "seaborn",
                         "opencv-python",

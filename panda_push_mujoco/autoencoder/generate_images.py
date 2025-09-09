@@ -33,7 +33,7 @@ object_reset_options = {
 try:
     # gym environment
     env_kwargs = {
-            "render_mode": "rgb_array",
+            "render_mode": "human",#"rgb_array",
             "object_reset_options": object_reset_options,
             "object_params": {"range_x_pos":np.array([-0.25,0.3]), "range_y_pos":np.array([-0.3,0.3])} if config.useSimConfig else {"range_x_pos":np.array([-0.23,0.23]), "range_y_pos":np.array([-0.15,0.27])},
             "fixed_object_height": config.fixedObjectHeight,
