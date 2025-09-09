@@ -1,0 +1,17 @@
+<launch>
+  <node pkg="precise_pushing_bridge"
+        type="gym_server.py"
+        name="precise_pushing_bridge"
+        output="screen">
+    <param name="env_id" value="MujocoPandaPushEnv"/>
+    <param name="publish_image" value="false"/>
+    <param name="fps" value="20"/>
+    <param name="env_kwargs"
+           value="{&quot;fixed_object_height&quot;: 0.023,
+                   &quot;fixed_object_height_VAE&quot;: 0.023}"/>
+
+
+
+  </node>
+</launch>
+

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/glx/precise_pushing/catkin_ws/devel/setup.sh

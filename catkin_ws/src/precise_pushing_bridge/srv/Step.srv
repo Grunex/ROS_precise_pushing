@@ -1,0 +1,6 @@
+# Request: action vector (shape must match your env's action_space)
+float32[] action
+---
+# Response
+float32 reward
+bool done
