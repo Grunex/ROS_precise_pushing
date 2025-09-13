@@ -2,5 +2,8 @@
 float32[] action
 ---
 # Response
+float32[] obs
 float32 reward
+bool terminated
+bool truncated
 bool done
