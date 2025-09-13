@@ -1,4 +1,4 @@
-# Request: action vector (shape must match your env's action_space)
+# Request: action vector
 float32[] action
 ---
 # Response
